@@ -5,7 +5,7 @@ import Toolbar from './components/Toolbar.tsx';
 import type { Tool, CanvasElement, ImageElement, SyncMessage } from './types.ts';
 import * as pdfjsLib from 'pdfjs-dist';
 import { CameraIcon, CameraOffIcon, MicIcon, MicOffIcon, ExitIcon } from './components/icons/index.tsx';
-import { Peer } from 'peerjs';
+import Peer from 'peerjs';
 
 // Configura o worker do PDF.js
 pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://esm.sh/pdfjs-dist@4.0.379/build/pdf.worker.min.mjs';
@@ -107,7 +107,7 @@ const App: React.FC = () => {
       setRole(type);
 
       // Linha 109: Create Peer instance (connects to DEDICATED PeerJS server) with STUN config
-const peer = new (Peer as any)(undefined, {
+const peer = new Peer(undefined, {
     host: 'peerjs-server-gilson.onrender.com', //
     port: 443, // Usar porta 443 para HTTPS
     path: '/myapp', // Caminho definido no server.js
