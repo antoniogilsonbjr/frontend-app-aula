@@ -1,4 +1,3 @@
-
 import React, { useState, useRef, useEffect } from 'react';
 import Whiteboard from './components/Whiteboard.tsx';
 import Toolbar from './components/Toolbar.tsx';
@@ -106,19 +105,19 @@ const App: React.FC = () => {
       setConnectionState('connecting');
       setRole(type);
 
-      // Linha 109: Create Peer instance (connects to DEDICATED PeerJS server) with STUN config
-const peer = new Peer(undefined, {
-    host: 'peerjs-server-gilson.onrender.com', //
-    port: 443, // Usar porta 443 para HTTPS
-    path: '/myapp', // Caminho definido no server.js
-    config: {
-        iceServers: [
-            { urls: 'stun:stun.l.google.com:19302' },
-            { urls: 'stun:global.stun.twilio.com:3478' }
-        ]
-    }
-});
+      // Create Peer instance (connects to DEDICATED PeerJS server) with STUN config
+      const peer = new Peer(undefined, {
+          host: 'peerjs-server-gilson.onrender.com',
+          port: 443, // Usar porta 443 para HTTPS
+          path: '/myapp', // Caminho definido no server.js
+          config: {
+              iceServers: [
+                  { urls: 'stun:stun.l.google.com:19302' },
+                  { urls: 'stun:global.stun.twilio.com:3478' }
+              ]
+          }
       });
+      
       peerRef.current = peer;
 
       peer.on('open', (id: string) => {
