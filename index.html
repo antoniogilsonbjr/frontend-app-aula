@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/icon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="theme-color" content="#ffffff" />
+    <title>Aplicativo do Profe. Gilson Antônio</title>
+    <link rel="manifest" href="/manifest.webmanifest" />
+    
+    <!-- Mantemos o Tailwind via CDN para simplicidade nesta configuração -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <style>
+      body { -webkit-tap-highlight-color: transparent; }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "vite": "https://aistudiocdn.com/vite@^7.2.4",
+    "@vitejs/plugin-react": "https://aistudiocdn.com/@vitejs/plugin-react@^5.1.1",
+    "peerjs": "https://aistudiocdn.com/peerjs@^1.5.5",
+    "pdfjs-dist": "https://aistudiocdn.com/pdfjs-dist@^5.4.394"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-white select-none touch-none overflow-hidden">
+    <div id="root"></div>
+    
+    <!-- Ponto de entrada do Vite -->
+    <script type="module" src="/index.tsx"></script>
+    
+    <script>
+      // Registro básico de Service Worker
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js').catch(err => console.log('SW falhou:', err));
+        });
+      }
+    </script>
+  </body>
+</html>

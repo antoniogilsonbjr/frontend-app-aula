@@ -1,0 +1,8 @@
+{
+  "name": "Aplicativo do Profe. Gilson Antônio",
+  "description": "Um aplicativo de quadro branco limpo e minimalista, projetado para anotações com mesas digitalizadoras e para gravação de videoaulas. Oferece ferramentas essenciais como caneta, borracha, seleção de cores e tamanhos de pincel, e funções de desfazer/refazer em uma interface sem distrações.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
