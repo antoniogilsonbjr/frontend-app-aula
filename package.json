@@ -11,7 +11,7 @@
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "peerjs": "^1.5.2",
+    "peerjs": "^1.5.4",
     "pdfjs-dist": "^4.0.379"
   },
   "devDependencies": {
